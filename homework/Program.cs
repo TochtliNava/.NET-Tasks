@@ -8,8 +8,6 @@ namespace homework
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hola");
-            Console.WriteLine("Dios");
         }
     }
 }
