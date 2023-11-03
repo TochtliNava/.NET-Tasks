@@ -11,7 +11,7 @@ namespace homework
             /**
              * Task 1.2
              * 
-             *      DUODECIMAL
+             *      DUODECIMAL "AA" CHECKER
              *  
             */
 
@@ -21,10 +21,23 @@ namespace homework
             Console.WriteLine("Enter the number B:");
             int b = int.Parse(Console.ReadLine());
 
+            if (b > a)
+            {
+                discoverJustAA(a, b);
+            }
+            if (a > b)
+            {
+                discoverJustAA(b, a);
+            }
+            if (a == b)
+            {
+                discoverJustAA(a);
+            }
+
             /**
              * Task 1.2
              * 
-             *      THE ISBN CALCULATOR
+             *      THE ISBN CHECK DIGIT CALCULATOR
              *  
             */
 
@@ -35,14 +48,17 @@ namespace homework
             // Can't store a char to number in a int variable
             double total = 0;
 
+            //  Multiply ISBN code by their coeficients
             for (int index = 0; index < isbn.Length; index++)
             {
                 total += (10 - index) * char.GetNumericValue(isbn[index]);
             }
 
             Console.WriteLine("The ISBN code with the check code:");
+            //  total mod 11
             total = total % 11;
 
+            // get what it needs to become a multiply of 11, so that number is the check digit
             if (11 - total == 10)
             {
                 Console.WriteLine($"{isbn}-X");
@@ -112,6 +128,19 @@ namespace homework
             {
                 Console.Write($"{item.ToString()} ");
             }
+        }
+
+        static void discoverJustAA(int start, int finish)
+        {
+            for (int current = start; current < finish; current++)
+            {
+                Console.WriteLine(current.ToString());
+            }
+        }
+
+        static void discoverJustAA(int number)
+        {
+            Console.WriteLine(number.ToString());
         }
     }
 }
