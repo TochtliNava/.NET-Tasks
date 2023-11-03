@@ -11,16 +11,38 @@ namespace homework
             /**
              * Task 1.2
              * 
-             *      THE ISBN PROBLEM
+             *      THE ISBN CALCULATOR
              *  
             */
 
+            // Takes the user's ISBN code
             Console.WriteLine("Enter the 9 numbers of the ISBN code:");
             string isbn = Console.ReadLine();
 
+            // Can't store a char to number in a int variable
+            double total = 0;
+
+            for (int index = 0; index < isbn.Length; index++)
+            {
+                total += (10 - index) * char.GetNumericValue(isbn[index]);
+            }
+
+            Console.WriteLine("The ISBN code with the check code:");
+            total = total % 11;
+
+            if (11 - total == 10)
+            {
+                Console.WriteLine($"{isbn}-X");
+            } else
+            {
+                Console.WriteLine($"{isbn}-{11 - total}");
+            }
 
             /**  
              * Task 1.3
+             * 
+             *      FILTER REPEATED ITEMS IN AN ARRAY
+             * 
             */
 
             //  Takes the number of elements of the array
