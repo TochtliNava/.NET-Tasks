@@ -9,7 +9,7 @@ namespace homework
         static void Main(string[] args)
         {
             /**
-             * Task 1.2
+             * Task 1.1
              * 
              *      DUODECIMAL "AA" CHECKER
              *  
@@ -20,6 +20,8 @@ namespace homework
 
             Console.WriteLine("Enter the number B:");
             int b = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Number(s) that has AA in the DuoDecimal system:");
 
             if (b > a)
             {
@@ -126,21 +128,95 @@ namespace homework
         {
             foreach (var item in array)
             {
-                Console.Write($"{item.ToString()} ");
+                Console.Write(item.ToString());
             }
         }
 
         static void discoverJustAA(int start, int finish)
         {
-            for (int current = start; current < finish; current++)
+            string hasDoubleAA = "";
+
+            // Checks every number from A to B and prints every number that has double AA
+            for (int currentNumber = start; currentNumber < finish + 1; currentNumber++)
             {
-                Console.WriteLine(current.ToString());
+                int count = 0;
+                foreach (var c in convertToDuoDecimal(currentNumber))
+                {
+                    if (c == 'A')
+                    {
+                        count++;
+                    }
+                }
+                if (count == 2)
+                {
+                    hasDoubleAA += currentNumber.ToString() + " ";
+                }
+            }
+
+            if (hasDoubleAA.Length != 0)
+            {
+                Console.WriteLine(hasDoubleAA);
+            } else
+            {
+                Console.WriteLine("None");
             }
         }
 
         static void discoverJustAA(int number)
         {
-            Console.WriteLine(number.ToString());
+            // The count that checks if only 2 AA's appears in the number
+            int count = 0;
+
+            // if there's only a number, check if has double AA
+            foreach (var c in convertToDuoDecimal(number))
+            {
+                if (c == 'A')
+                {
+                    count++;
+                }
+            }
+            if (count == 2)
+            {
+                Console.WriteLine(number.ToString());
+            } else
+            {
+                Console.WriteLine("None");
+            }
+        }
+
+        static char[] convertToDuoDecimal(int number)
+        {
+            string duodecimalNumber = "";
+            char[] duoNumber;
+
+            //  Checks if the number is negative
+            if (number < 0)
+            {
+                number *= -1;
+            }
+
+            // Convert the decimal number to duodecimal by the division method
+            while (number > 2)
+            {
+                if (number % 12 == 10)
+                {
+                    duodecimalNumber += "A";
+                }
+                if (number % 12 == 11)
+                {
+                    duodecimalNumber += "B";
+                }
+                if (number % 12 != 11 && number % 12 != 10)
+                {
+                    duodecimalNumber += (number % 12).ToString();
+                }
+                number = number / 12;
+            }
+
+            // Converts the duodecimal number to a charArray to finally reverse it
+            duoNumber = duodecimalNumber.ToCharArray();
+            Array.Reverse(duoNumber);
+            return duoNumber;
         }
     }
 }
