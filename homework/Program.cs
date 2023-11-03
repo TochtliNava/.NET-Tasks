@@ -15,7 +15,11 @@ namespace homework
              *  
             */
 
+            Console.WriteLine("Enter the number A:");
+            int a = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("Enter the number B:");
+            int b = int.Parse(Console.ReadLine());
 
             /**
              * Task 1.2
