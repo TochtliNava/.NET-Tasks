@@ -11,6 +11,15 @@ namespace homework
             /**
              * Task 1.2
              * 
+             *      DUODECIMAL
+             *  
+            */
+
+
+
+            /**
+             * Task 1.2
+             * 
              *      THE ISBN CALCULATOR
              *  
             */
@@ -47,10 +56,10 @@ namespace homework
 
             //  Takes the number of elements of the array
             Console.WriteLine("Enter the number of elements of the array:");
-            int length = int.Parse(Console.ReadLine());
+            int lengthArray = int.Parse(Console.ReadLine());
 
-            int[] baseArray = new int[length];
-            int[] tempfilteredArray = new int[length];
+            int[] baseArray = new int[lengthArray];
+            int[] tempfilteredArray = new int[lengthArray];
             
             //  Reads the elements providen by the user
             for (int index = 0; index < baseArray.Length; index++)
@@ -62,10 +71,7 @@ namespace homework
             //  Writes in Console the array entered by user
             Console.WriteLine("Array entered by the user:");
 
-            foreach (var item in baseArray)
-            {
-                Console.Write($"{item.ToString()} ");
-            }
+            PrintArray(baseArray);
 
             Console.WriteLine();
             Console.WriteLine("Array filtered:");
@@ -93,7 +99,12 @@ namespace homework
             }
 
             //  Writes in Console the array filtered
-            foreach (var item in filteredArray)
+            PrintArray(filteredArray);
+        }
+
+        static void PrintArray(int[] array)
+        {
+            foreach (var item in array)
             {
                 Console.Write($"{item.ToString()} ");
             }
