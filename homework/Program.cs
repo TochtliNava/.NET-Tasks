@@ -8,6 +8,17 @@ namespace homework
     {
         static void Main(string[] args)
         {
+            /**
+             * Task 1.2
+             * 
+             *      THE ISBN PROBLEM
+             *  
+            */
+
+            Console.WriteLine("Enter the 9 numbers of the ISBN code:");
+            string isbn = Console.ReadLine();
+
+
             /**  
              * Task 1.3
             */
