@@ -21,20 +21,14 @@ namespace homework
             Console.WriteLine("Enter the number B:");
             int b = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Number(s) that has AA in the DuoDecimal system:");
-
             if (b > a)
             {
-                discoverJustAA(a, b);
+                (b, a) = (a, b);
             }
-            if (a > b)
-            {
-                discoverJustAA(b, a);
-            }
-            if (a == b)
-            {
-                discoverJustAA(a);
-            }
+
+            Console.WriteLine("Number(s) that has AA in the DuoDecimal system:");
+
+            DiscoverJustAA(a, b);
 
             /**
              * Task 1.2
@@ -132,7 +126,7 @@ namespace homework
             }
         }
 
-        static void discoverJustAA(int start, int finish)
+        static void DiscoverJustAA(int start, int finish)
         {
             string hasDoubleAA = "";
 
@@ -162,7 +156,7 @@ namespace homework
             }
         }
 
-        static void discoverJustAA(int number)
+        static void DiscoverJustAA(int number)
         {
             // The count that checks if only 2 AA's appears in the number
             int count = 0;
