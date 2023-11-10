@@ -45,13 +45,8 @@ namespace homework
             total = total % 11;
 
             // get what it needs to become a multiply of 11, so that number is the check digit
-            if (11 - total == 10)
-            {
-                Console.WriteLine($"{isbn}-X");
-            } else
-            {
-                Console.WriteLine($"{isbn}-{11 - total}");
-            }
+            string code = (11 - total == 10) ? $"{isbn}-X" : $"{isbn}-{11 - total}";
+            Console.WriteLine(code);
 
             /**  
              * Task 1.3
