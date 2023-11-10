@@ -8,12 +8,7 @@ namespace homework
     {
         static void Main(string[] args)
         {
-            /**
-             * Task 1.1
-             * 
-             *      DUODECIMAL "AA" CHECKER
-             *  
-            */
+            // Task 1.1
 
             Console.WriteLine("Enter the number A:");
             int a = int.Parse(Console.ReadLine());
@@ -30,12 +25,7 @@ namespace homework
 
             DiscoverJustAA(a, b);
 
-            /**
-             * Task 1.2
-             * 
-             *      THE ISBN CHECK DIGIT CALCULATOR
-             *  
-            */
+            // Task 1.2
 
             // Takes the user's ISBN code
             Console.WriteLine("Enter the 9 numbers of the ISBN code:");
@@ -134,7 +124,7 @@ namespace homework
             for (int currentNumber = start; currentNumber < finish + 1; currentNumber++)
             {
                 int count = 0;
-                foreach (var c in convertToDuoDecimal(currentNumber))
+                foreach (var c in ConvertToDuoDecimal(currentNumber))
                 {
                     if (c == 'A')
                     {
@@ -156,29 +146,7 @@ namespace homework
             }
         }
 
-        static void discoverJustAA(int number)
-        {
-            // The count that checks if only 2 AA's appears in the number
-            int count = 0;
-
-            // if there's only a number, check if has double AA
-            foreach (var c in convertToDuoDecimal(number))
-            {
-                if (c == 'A')
-                {
-                    count++;
-                }
-            }
-            if (count == 2)
-            {
-                Console.WriteLine(number.ToString());
-            } else
-            {
-                Console.WriteLine("None");
-            }
-        }
-
-        static char[] convertToDuoDecimal(int number)
+        static char[] ConvertToDuoDecimal(int number)
         {
             string duodecimalNumber = "";
             char[] duoNumber;
