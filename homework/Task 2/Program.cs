@@ -24,6 +24,27 @@ namespace homework._Task2
             //  Test CalculateDistance()
             double distance = point2.CalculateDistance(point1);
 
+            //  Task 2.2
+
+            //  Create diagonals to test
+            int[] diagonal = { 1, 1, 1, 1 };
+            int[] diagonal1 = { 1, 2, 3 };
+            int[] diagonal2 = { };
+
+            //  Create matrixes
+            DiagonalMatrix matrix = new DiagonalMatrix(diagonal);
+            DiagonalMatrix matrix1 = new DiagonalMatrix(diagonal1);
+
+            //  null parameters -> 0 size matrix
+            DiagonalMatrix matrix2 = new DiagonalMatrix(diagonal2);
+
+            // Override method
+            Console.Write(matrix1.ToString());
+
+            //  Extension Method
+            DiagonalMatrix sumMatrix = matrix.SumDiagonals(matrix1);
+            Console.WriteLine(sumMatrix.ToString());
+
             //  Task 2.3
 
             //  Create two training instances to check practical
@@ -51,16 +72,7 @@ namespace homework._Task2
             bool isPractical = training.IsPractical();  // true
             isPractical = training2.IsPractical();      // false
 
-            int[] diagonal = {};
-            int[] diagonal1 = { 1, 2, 3, 0, 3, 1 };
-
-            DiagonalMatrix matrix = new DiagonalMatrix(diagonal);
-            DiagonalMatrix matrix1 = new DiagonalMatrix(diagonal1);
-
-            Console.Write(matrix1.ToString());
-
-            //  Extension Method
-            matrix.SumDiagonals(matrix1);
+            
         }
     }
 }

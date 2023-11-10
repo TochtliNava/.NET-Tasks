@@ -33,6 +33,17 @@ namespace homework._Task2
             return _size;
         }
 
+        public int GetElement(int i, int j)
+        {
+            int element = 0;
+            if (i < GetSize() && j < GetSize())
+            {
+                element = i == j ? _diagonal[i] : 0;
+                return element;
+            }
+            return element;
+        }
+
         public override string ToString()
         {
             string print = "";
