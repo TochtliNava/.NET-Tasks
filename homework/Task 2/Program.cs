@@ -41,6 +41,9 @@ namespace homework._Task2
             // Override method
             Console.Write(matrix1.ToString());
 
+            //  Check if they're equal
+            bool isEqual = matrix.Equals(matrix1);
+
             //  Extension Method
             DiagonalMatrix sumMatrix = matrix.SumDiagonals(matrix1);
             Console.WriteLine(sumMatrix.ToString());
@@ -71,8 +74,6 @@ namespace homework._Task2
 
             bool isPractical = training.IsPractical();  // true
             isPractical = training2.IsPractical();      // false
-
-            
         }
     }
 }
