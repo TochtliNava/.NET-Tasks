@@ -8,12 +8,7 @@ namespace homework
     {
         static void Main(string[] args)
         {
-            /**
-             * Task 1.1
-             * 
-             *      DUODECIMAL "AA" CHECKER
-             *  
-            */
+            // Task 1.1
 
             Console.WriteLine("Enter the number A:");
             int a = int.Parse(Console.ReadLine());
@@ -23,19 +18,14 @@ namespace homework
 
             if (b > a)
             {
-                (b, a) = (a, b);
+                (a, b) = (b, a);
             }
 
             Console.WriteLine("Number(s) that has AA in the DuoDecimal system:");
 
             DiscoverJustAA(a, b);
 
-            /**
-             * Task 1.2
-             * 
-             *      THE ISBN CHECK DIGIT CALCULATOR
-             *  
-            */
+            // Task 1.2
 
             // Takes the user's ISBN code
             Console.WriteLine("Enter the 9 numbers of the ISBN code:");
@@ -55,20 +45,10 @@ namespace homework
             total = total % 11;
 
             // get what it needs to become a multiply of 11, so that number is the check digit
-            if (11 - total == 10)
-            {
-                Console.WriteLine($"{isbn}-X");
-            } else
-            {
-                Console.WriteLine($"{isbn}-{11 - total}");
-            }
+            string code = (11 - total == 10) ? $"{isbn}-X" : $"{isbn}-{11 - total}";
+            Console.WriteLine(code);
 
-            /**  
-             * Task 1.3
-             * 
-             *      FILTER REPEATED ITEMS IN AN ARRAY
-             * 
-            */
+            //  Task 1.3
 
             //  Takes the number of elements of the array
             Console.WriteLine("Enter the number of elements of the array:");
@@ -76,7 +56,7 @@ namespace homework
 
             int[] baseArray = new int[lengthArray];
             int[] tempfilteredArray = new int[lengthArray];
-            
+
             //  Reads the elements providen by the user
             for (int index = 0; index < baseArray.Length; index++)
             {
@@ -98,14 +78,14 @@ namespace homework
             for (int index = 0; index < baseArray.Length; index++)
             {
                 // checks if the value is stored in tempfilteredarray
-                if(Array.IndexOf(tempfilteredArray, baseArray[index]) == -1)
+                if (Array.IndexOf(tempfilteredArray, baseArray[index]) == -1)
                 {
                     // copy the value to the temparray
                     tempfilteredArray[size] = baseArray[index];
                     size++;
                 }
             }
-            
+
             //  size would be the size of the pre filtered array, now, only we need to do is to crop all the 0's
             int[] filteredArray = new int[size];
 
@@ -134,7 +114,7 @@ namespace homework
             for (int currentNumber = start; currentNumber < finish + 1; currentNumber++)
             {
                 int count = 0;
-                foreach (var c in convertToDuoDecimal(currentNumber))
+                foreach (var c in ConvertToDuoDecimal(currentNumber))
                 {
                     if (c == 'A')
                     {
@@ -150,35 +130,14 @@ namespace homework
             if (hasDoubleAA.Length != 0)
             {
                 Console.WriteLine(hasDoubleAA);
-            } else
+            }
+            else
             {
                 Console.WriteLine("None");
             }
         }
 
-        static void DiscoverJustAA(int number)
-        {
-            // The count that checks if only 2 AA's appears in the number
-            int count = 0;
-
-            // if there's only a number, check if has double AA
-            foreach (var c in convertToDuoDecimal(number))
-            {
-                if (c == 'A')
-                {
-                    count++;
-                }
-            }
-            if (count == 2)
-            {
-                Console.WriteLine(number.ToString());
-            } else
-            {
-                Console.WriteLine("None");
-            }
-        }
-
-        static char[] convertToDuoDecimal(int number)
+        static char[] ConvertToDuoDecimal(int number)
         {
             string duodecimalNumber = "";
             char[] duoNumber;
