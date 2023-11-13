@@ -1,9 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Threading.Tasks;
-using homework._Task2;
-
-namespace homework._Task2
+﻿namespace homework._Task2
 {
     public class Training
     {

@@ -1,7 +1,5 @@
 ﻿using homework.Task_2;
 using System;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace homework._Task2
 {

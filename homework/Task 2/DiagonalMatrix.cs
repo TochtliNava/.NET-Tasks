@@ -1,14 +1,11 @@
-﻿using System;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace homework._Task2
+﻿namespace homework._Task2
 {
     public class DiagonalMatrix
     {
         private readonly int _size;
         private int[] _diagonal;
+
+        public int Size { get { return _size; } }
         public DiagonalMatrix(int[] diagonal) 
         {
             if (diagonal != null)
@@ -28,15 +25,10 @@ namespace homework._Task2
             return sum;
         }
 
-        public int GetSize()
-        {
-            return _size;
-        }
-
         public int GetElement(int i, int j)
         {
             int element = 0;
-            if (i < GetSize() && j < GetSize())
+            if (i < Size && j < Size)
             {
                 element = i == j ? _diagonal[i] : 0;
                 return element;
@@ -62,7 +54,7 @@ namespace homework._Task2
         public override bool Equals(object obj)
         {
             var matrix = obj as DiagonalMatrix;
-            if(matrix.GetSize() != _size)
+            if(matrix.Size != _size)
             {
                 return false;
             }
