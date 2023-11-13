@@ -2,9 +2,6 @@
 {
     internal class LectureLesson : Lesson
     {
-        public LectureLesson(string description)
-        {
-            Description = description;
-        }
+        public LectureLesson(string description) => Description = description;
     }
 }

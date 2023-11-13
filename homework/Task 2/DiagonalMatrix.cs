@@ -8,7 +8,14 @@
         public int Size { get { return _size; } }
         public int this[int x, int y]
         {
-            get { return x == y ? _diagonal[x] : 0; }
+            get
+            {
+                if (x < Size &&  y < Size)
+                {
+                    return x == y? _diagonal[x] : 0;
+                }
+                return 0;
+            }
         }
 
 
