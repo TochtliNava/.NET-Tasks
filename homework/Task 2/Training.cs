@@ -26,7 +26,7 @@
         {
             foreach (var resource in _resources) 
             {
-                if (resource is LectureLesson)
+                if (!(resource is PracticalLesson))
                 {
                     return false;
                 }
