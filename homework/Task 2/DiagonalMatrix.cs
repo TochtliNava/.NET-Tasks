@@ -6,6 +6,12 @@
         private int[] _diagonal;
 
         public int Size { get { return _size; } }
+        public int this[int x, int y]
+        {
+            get { return x == y ? _diagonal[x] : 0; }
+        }
+
+
         public DiagonalMatrix(int[] diagonal) 
         {
             if (diagonal != null)
@@ -25,17 +31,6 @@
             return sum;
         }
 
-        public int GetElement(int i, int j)
-        {
-            int element = 0;
-            if (i < Size && j < Size)
-            {
-                element = i == j ? _diagonal[i] : 0;
-                return element;
-            }
-            return element;
-        }
-
         public override string ToString()
         {
             string print = "";
@@ -43,7 +38,7 @@
             {
                 for (int y = 0; y < _size; y++)
                 {
-                    print += x != y ? 0 : _diagonal[x];
+                    print += this[x, y];
                     print += " ";
                 }
                 print += "\n";

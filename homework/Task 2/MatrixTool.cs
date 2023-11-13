@@ -14,7 +14,7 @@ namespace homework.Task_2
                 {
                     if (x == y)
                     {
-                        diagonal[x] = matrix1.GetElement(x, y) + matrix2.GetElement(x, y);
+                        diagonal[x] = matrix1[x, y] + matrix2[x, y];
                     }
                 }
             }
