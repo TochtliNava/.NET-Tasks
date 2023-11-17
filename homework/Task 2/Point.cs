@@ -11,7 +11,7 @@ namespace homework._Task2
         public int Y { get { return _coordinates[1]; } }
         public int Z { get { return _coordinates[2]; } }
         public double Mass {  get { return _mass; } }
-
+        
         public Point(int x, int y, int z, double mass)
         {
             _coordinates[0] = x;

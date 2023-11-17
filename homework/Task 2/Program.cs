@@ -46,6 +46,11 @@ namespace homework._Task2
             DiagonalMatrix sumMatrix = matrix.SumDiagonals(matrix1);
             Console.WriteLine(sumMatrix.ToString());
 
+            //  Clone
+            DiagonalMatrix nonClonedMatrix = new DiagonalMatrix(diagonal);
+            DiagonalMatrix clonedMatrix = (DiagonalMatrix)nonClonedMatrix.Clone();
+            clonedMatrix[2, 2] = 3;
+
             //  Task 2.3
 
             //  Create two training instances to check practical

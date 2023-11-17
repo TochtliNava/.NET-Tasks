@@ -1,6 +1,8 @@
-﻿namespace homework._Task2
+﻿using System;
+
+namespace homework._Task2
 {
-    public class DiagonalMatrix
+    public class DiagonalMatrix : ICloneable
     {
         private readonly int _size;
         private int[] _diagonal;
@@ -15,6 +17,13 @@
                     return x == y? _diagonal[x] : 0;
                 }
                 return 0;
+            }
+            set
+            {
+                if (x < Size && y < Size)
+                {
+                    _diagonal[x] = value;
+                }
             }
         }
 
@@ -68,6 +77,17 @@
                 }
             }
             return true;
+        }
+
+        public object Clone()
+        {
+            int[] diagonal = new int[Size];
+            DiagonalMatrix clone = new DiagonalMatrix(diagonal);
+            for (int i = 0; i < _size; i++)
+            {
+                clone[i, i] = _diagonal[i];
+            }
+            return clone;
         }
     }
 }
