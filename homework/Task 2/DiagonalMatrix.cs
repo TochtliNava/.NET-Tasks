@@ -2,7 +2,7 @@
 
 namespace homework._Task2
 {
-    public class DiagonalMatrix : ICloneable
+    public class DiagonalMatrix
     {
         private readonly int _size;
         private int[] _diagonal;
@@ -12,7 +12,7 @@ namespace homework._Task2
         {
             get
             {
-                if (x < Size &&  y < Size)
+                if ((x < Size &&  y < Size) && (x >= 0 && y >= 0))
                 {
                     return x == y? _diagonal[x] : 0;
                 }
@@ -20,7 +20,7 @@ namespace homework._Task2
             }
             set
             {
-                if (x < Size && y < Size)
+                if ((x < Size && y < Size) && (y >= 0 && x >= 0))
                 {
                     _diagonal[x] = value;
                 }
@@ -77,17 +77,6 @@ namespace homework._Task2
                 }
             }
             return true;
-        }
-
-        public object Clone()
-        {
-            int[] diagonal = new int[Size];
-            DiagonalMatrix clone = new DiagonalMatrix(diagonal);
-            for (int i = 0; i < _size; i++)
-            {
-                clone[i, i] = _diagonal[i];
-            }
-            return clone;
         }
     }
 }

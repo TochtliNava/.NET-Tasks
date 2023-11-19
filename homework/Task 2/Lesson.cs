@@ -1,6 +1,8 @@
-﻿namespace homework._Task2
+﻿using System;
+
+namespace homework._Task2
 {
-    public class Lesson
+    public class Lesson : ICloneable
     {
         private string _description;
         public string Description
@@ -13,6 +15,13 @@
             {
                 _description = value;
             }
+        }
+
+        public object Clone()
+        {
+            Lesson lesson = new Lesson();
+            lesson.Description = Description;
+            return lesson;
         }
     }
 }

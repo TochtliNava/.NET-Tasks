@@ -1,9 +1,12 @@
-﻿namespace homework._Task2
+﻿using System;
+
+namespace homework._Task2
 {
-    public class Training
+    public class Training : ICloneable
     {
         private string _description;
         private Lesson[] _resources = new Lesson[0];
+
 
         public Training(string description)
         {
@@ -34,11 +37,14 @@
             return true;
         }
 
-        public Training Clone()
+        public object Clone()
         {
-            Training clone = (Training) this.MemberwiseClone();
-            clone._description = string.Copy(_description);
-            clone._resources = (Lesson[]) _resources.Clone();
+            string description = _description;
+            Training clone = new Training(description);
+            for (int i = 0; i < _resources.Length; i++)
+            {
+                clone.Add(_resources[i]);
+            }
             return clone;
         }
     }
