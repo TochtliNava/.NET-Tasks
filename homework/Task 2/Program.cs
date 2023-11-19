@@ -46,6 +46,9 @@ namespace homework._Task2
             DiagonalMatrix sumMatrix = matrix.SumDiagonals(matrix1);
             Console.WriteLine(sumMatrix.ToString());
 
+            //  Check if x or y is negative
+            int value = matrix[-1, -1];
+
             //  Task 2.3
 
             //  Create two training instances to check practical
