@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>homework._Task2.Program</StartupObject>
+    <StartupObject>task3.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -57,6 +57,9 @@
     <Compile Include="Task 2\PracticalLesson.cs" />
     <Compile Include="Task 2\Program.cs" />
     <Compile Include="Task 2\Training.cs" />
+    <Compile Include="Task 3\IQueue.cs" />
+    <Compile Include="Task 3\Program.cs" />
+    <Compile Include="Task 3\Queue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
