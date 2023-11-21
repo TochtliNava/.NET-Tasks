@@ -48,12 +48,7 @@ namespace homework
             string code = (11 - total == 10) ? $"{isbn}-X" : $"{isbn}-{11 - total}";
             Console.WriteLine(code);
 
-            /**  
-             * Task 1.3
-             * 
-             *      FILTER REPEATED ITEMS IN AN ARRAY
-             * 
-            */
+            //  Task 1.3
 
             //  Takes the number of elements of the array
             Console.WriteLine("Enter the number of elements of the array:");
@@ -61,7 +56,7 @@ namespace homework
 
             int[] baseArray = new int[lengthArray];
             int[] tempfilteredArray = new int[lengthArray];
-            
+
             //  Reads the elements providen by the user
             for (int index = 0; index < baseArray.Length; index++)
             {
@@ -83,14 +78,14 @@ namespace homework
             for (int index = 0; index < baseArray.Length; index++)
             {
                 // checks if the value is stored in tempfilteredarray
-                if(Array.IndexOf(tempfilteredArray, baseArray[index]) == -1)
+                if (Array.IndexOf(tempfilteredArray, baseArray[index]) == -1)
                 {
                     // copy the value to the temparray
                     tempfilteredArray[size] = baseArray[index];
                     size++;
                 }
             }
-            
+
             //  size would be the size of the pre filtered array, now, only we need to do is to crop all the 0's
             int[] filteredArray = new int[size];
 
@@ -135,7 +130,8 @@ namespace homework
             if (hasDoubleAA.Length != 0)
             {
                 Console.WriteLine(hasDoubleAA);
-            } else
+            }
+            else
             {
                 Console.WriteLine("None");
             }
