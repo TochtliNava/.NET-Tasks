@@ -1,6 +1,6 @@
-﻿using System.Collections;
+﻿using homework.Task_3;
 
-namespace task3
+namespace homework._Task3
 {
     internal class Program
     {
@@ -22,8 +22,8 @@ namespace task3
             //tailQueue.Tail();
             tailQueue.Dequeue();
             bool isEmpty = tailQueue.IsEmpty();     //  True
-            tailQueue.Dequeue();
-            isEmpty = tailQueue.IsEmpty();
+            //  Error
+            //tailQueue.Dequeue();
             tailQueue.Enqueue(6);
         }
     }

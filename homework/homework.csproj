@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>task3.Program</StartupObject>
+    <StartupObject>homework._Task3.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -60,6 +60,7 @@
     <Compile Include="Task 3\IQueue.cs" />
     <Compile Include="Task 3\Program.cs" />
     <Compile Include="Task 3\Queue.cs" />
+    <Compile Include="Task 3\QueueTail.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

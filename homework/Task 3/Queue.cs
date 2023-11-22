@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace task3
+namespace homework._Task3
 {
     internal class Queue<T> : IQueue<T>
     {
@@ -30,6 +30,12 @@ namespace task3
             LastItem = queue.Length;
         }
 
+        public Queue(T[] queue, int lastItem)
+        {
+            _queue = queue;
+            LastItem = lastItem;
+        }
+
         public void Enqueue(T element)
         {
             if (LastItem == Size)
@@ -42,37 +48,18 @@ namespace task3
 
         public void Dequeue()
         {
-            if (LastItem == 0)
+            if (IsEmpty())
             {
-                _queue = new T[Size];
-                return;
+                throw new Exception("Couldn't perform Dequeue(): Queue is empty");
             }
-            T[] tempQueue = new T[Size];
             for (int i = 0; i < Size - 1; i++)
             {
-                tempQueue[i] = _queue[i + 1];
+                _queue[i] = _queue[i + 1];
             }
-            _queue = tempQueue;
+            _queue[Size - 1] = default(T);
             LastItem--;
         }
 
-        public bool IsEmpty()
-        {
-            return LastItem == 0 ? true : false;
-        }
-
-        public Queue<T> Tail()
-        {
-            if (Size == 1 || LastItem == 1 || LastItem == 0)
-            {
-                throw new Exception("Can't perform Tail() Method: The Queue size/elements is 1 or is empty");
-            }
-            T[] tail = new T[Size - 1];
-            for (int i = 0; i < Size - 1; i++)
-            {
-                tail[i] = _queue[i + 1];
-            }
-            return new Queue<T>(tail);
-        }
+        public bool IsEmpty() => LastItem == 0;
     }
 }
