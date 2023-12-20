@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 
 namespace Task_4
 {
@@ -27,7 +26,7 @@ namespace Task_4
                 {
                     T oldValue = _diagonal[x];
                     _diagonal[x] = value;
-                    //ElementChanged(x, oldValue, value);
+                    OnElementChanged(x, oldValue);
                 }
             }
         }
@@ -41,11 +40,11 @@ namespace Task_4
             _diagonal = new T[size];
         }
 
-        public delegate void ElementChangedEventHandler(int index, T oldValue, T nextValue);
+        public delegate void ElementChangedEventHandler(int index, T oldValue);
         public event ElementChangedEventHandler ElementChanged;
-        private void OnElementChanged(int index, T oldValue, T nextValue)
+        private void OnElementChanged(int index, T oldValue)
         {
-            ElementChanged?.Invoke(index, oldValue, nextValue);
+            ElementChanged?.Invoke(index, oldValue);
         }
     }
 }

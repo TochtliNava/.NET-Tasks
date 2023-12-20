@@ -69,6 +69,7 @@
     <Compile Include="Task 3\QueueTail.cs" />
     <Compile Include="Task 4\GenericDiagonalMatrix.cs" />
     <Compile Include="Task 4\GenericDiagonalMatrixExtensions.cs" />
+    <Compile Include="Task 4\MatrixTracker.cs" />
     <Compile Include="Task 4\Program.cs" />
   </ItemGroup>
   <ItemGroup>

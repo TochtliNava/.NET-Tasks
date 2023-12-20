@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 
 namespace Task_4
 {
@@ -16,8 +15,14 @@ namespace Task_4
             matrix2[1, 1] = 5;
             matrix2[3, 3] = 5;
 
+            //  Extension Method
             Func<int, int, int> addFunction = (a, b) => a + b;
             GenericDiagonalMatrix<int> result = matrix.Add(matrix2, addFunction);
+
+            //  Undo Method
+            MatrixTracker<int> matrixTracker = new MatrixTracker<int>(matrix);
+            matrix[3, 3] = 8;
+            matrixTracker.Undo()
         }
     }
 }
