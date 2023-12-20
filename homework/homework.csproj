@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>homework._Task3.Program</StartupObject>
+    <StartupObject>Task_4.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -61,12 +61,12 @@
     <Compile Include="Task 3\Program.cs" />
     <Compile Include="Task 3\Queue.cs" />
     <Compile Include="Task 3\QueueTail.cs" />
+    <Compile Include="Task 4\GenericDiagonalMatrix.cs" />
+    <Compile Include="Task 4\Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Task 4\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
