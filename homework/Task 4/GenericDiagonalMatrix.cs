@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace Task_4
 {
     internal class GenericDiagonalMatrix<T>
     {
         private T[] _diagonal;
-
         public int Size
         {
             get { return _diagonal.Length; }
@@ -15,17 +15,19 @@ namespace Task_4
         {
             get
             {
-                if ((x - 1) < Size && (y - 1) < Size && (x - 1) >= 0 && (y - 1) >= 0)
+                if (x < Size && y < Size && x >= 0 && y >= 0)
                 {
-                    return x == y ? _diagonal[x - 1] : default(T);
+                    return x == y ? _diagonal[x] : default;
                 }
                 throw new IndexOutOfRangeException("Index out of range");
             }
             set 
             {
-                if ((x - 1) < Size && (y - 1) < Size && (x - 1) >= 0 && (y - 1) >= 0)
+                if (x < Size && y < Size && x >= 0 && y >= 0 && x == y)
                 {
-                    _diagonal[x - 1] = x == y ? value : default(T);
+                    T oldValue = _diagonal[x];
+                    _diagonal[x] = value;
+                    //ElementChanged(x, oldValue, value);
                 }
             }
         }
@@ -37,6 +39,13 @@ namespace Task_4
                 throw new ArgumentException("The size can't be negative"); 
             }
             _diagonal = new T[size];
+        }
+
+        public delegate void ElementChangedEventHandler(int index, T oldValue, T nextValue);
+        public event ElementChangedEventHandler ElementChanged;
+        private void OnElementChanged(int index, T oldValue, T nextValue)
+        {
+            ElementChanged?.Invoke(index, oldValue, nextValue);
         }
     }
 }
