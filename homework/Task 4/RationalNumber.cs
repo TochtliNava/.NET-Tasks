@@ -2,7 +2,7 @@
 
 namespace Task_4
 {
-    sealed internal class RationalNumber
+    sealed internal class RationalNumber : IComparable<RationalNumber>
     {
         public int Numerator { get; }
         public int Denominator { get; }
@@ -69,5 +69,21 @@ namespace Task_4
         {
             return (b.Numerator == Numerator) && (b.Denominator == Denominator);
         }
+
+        public int CompareTo(RationalNumber other)
+        {
+            return Numerator*other.Denominator.CompareTo(other.Numerator*Denominator);
+        }
+
+        public static explicit operator double(RationalNumber rational)
+        {
+            return (double)rational.Numerator / rational.Denominator;
+        }
+
+        public static implicit operator RationalNumber(int value)
+        {
+            return new RationalNumber(value, 1);
+        }
     }
 }
+

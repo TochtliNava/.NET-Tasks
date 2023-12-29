@@ -29,6 +29,15 @@ namespace Task_4
 
             bool isSame = fraction.Equals(rational);  //  False
             Console.WriteLine(fraction);
+            int comparation = fraction.CompareTo(rational);
+
+            RationalNumber resultFraction = (fraction + rational);
+            resultFraction = (fraction - rational);
+            resultFraction = (fraction * rational);
+            resultFraction = (fraction / rational);
+
+            double rationalNumber = ((double)fraction);
+            RationalNumber implicitNumber = 3;
         }
     }
 }
