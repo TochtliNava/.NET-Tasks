@@ -4,7 +4,7 @@ namespace Task_4
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             GenericDiagonalMatrix<int> matrix = new GenericDiagonalMatrix<int>(4);
             GenericDiagonalMatrix<int> matrix2 = new GenericDiagonalMatrix<int>(4);
@@ -22,7 +22,13 @@ namespace Task_4
             //  Undo Method
             MatrixTracker<int> matrixTracker = new MatrixTracker<int>(matrix);
             matrix[3, 3] = 8;
-            matrixTracker.Undo()
+            matrixTracker.Undo();
+
+            RationalNumber fraction = new RationalNumber(-2, 6); // Should be 1/3
+            RationalNumber rational = new RationalNumber(2, 8);
+
+            bool isSame = fraction.Equals(rational);  //  False
+            Console.WriteLine(fraction);
         }
     }
 }
